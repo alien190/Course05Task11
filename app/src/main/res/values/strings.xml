@@ -3,4 +3,6 @@
     <string name="line_width_label">Толщина линии</string>
     <string name="line_color_label">Цвет линии</string>
     <string name="decor_label">Декорирование</string>
+    <string name="ok_label">Ok</string>
+    <string name="cancel_label">отмена</string>
 </resources>
