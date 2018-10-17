@@ -56,7 +56,7 @@ public class DrawingView extends View {
                 }
                 mLastLine.clear();
                 mLastLine.addPoint(e);
-                mLastLine.setPaint(mMainPaint);
+                mLastLine.setPaint(new Paint(mMainPaint));
                 return true;
             }
 
@@ -89,6 +89,22 @@ public class DrawingView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         return mGestureDetector.onTouchEvent(event);
+    }
+
+    public void setLineWidth(int width){
+        mMainPaint.setStrokeWidth(width);
+    }
+
+    public void setLineColor(int color){
+        mMainPaint.setColor(color);
+    }
+
+    public int getLineWidth(){
+        return (int) mMainPaint.getStrokeWidth();
+    }
+
+    public int getLineColor(){
+        return mMainPaint.getColor();
     }
 
     private class Line {
@@ -143,8 +159,9 @@ public class DrawingView extends View {
 
         private void drawLine(Canvas canvas) {
             for (int i = 1, size = mPoints.size(); i < size; i++) {
-                canvas.drawLine(mPoints.get(i - 1).x, mPoints.get(i - 1).y, mPoints.get(i).x, mPoints.get(i).y, mMainPaint);
+                canvas.drawLine(mPoints.get(i - 1).x, mPoints.get(i - 1).y, mPoints.get(i).x, mPoints.get(i).y, mPaint);
             }
         }
     }
+
 }

@@ -8,6 +8,7 @@
 
     <com.example.alien.course05task11.DrawingView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@+id/drawing"/>
 
 </LinearLayout>
